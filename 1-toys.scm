@@ -1,5 +1,7 @@
 (define (atom? x)
   (and (not (pair? x)) (not (null? x))))
+
+;;; Atoms
 ;; Is it true that this is an atom?
 ;; 'atom
 
@@ -25,6 +27,7 @@
 
 ;; Yes, because *abc$ is quoted.
 
+;;; Lists
 ;; Is it true that this is a list?
 ;; '(atom)
 
@@ -47,6 +50,7 @@
 ;; Yes, because it is a collection of 2 S-exprs.
 ;; The first is a list containing 2 S-exprs. The other is an atom.
 
+;;; S-expressions
 ;; Is it true that this is an S-expression?
 ;; 'xyz
 
@@ -99,6 +103,7 @@
 
 ;; Yes, because it is a collection of 4 S-exprs; specifically, 4 empty lists.
 
+;;; car
 ;; What is the car of l
 ;; where l is the argument
 ;; '(a b c)
@@ -141,3 +146,41 @@
 ;; where
 ;; l is '((hotdogs))
 ;; is (hotdogs).
+
+;;; cdr
+;; What is the cdr of l
+;; where
+;; l is '(a b c)
+;;
+;; Note: "cdr" is pronounced "could-er."
+
+;; (b c), because (b c) is the list l without (car l).
+
+;; What is the cdr of l
+;; where
+;; l is '((a b c) x y z)
+
+;; (x y z).
+
+;; What is the cdr of l
+;; where
+;; l is '(hamburger)
+
+;; The empty list.
+
+;; What is (cdr l)
+;; where
+;; l is '((x) t r)
+
+;; (t r).
+
+;; What is (cdr a)
+;; where
+;; a is 'hotdogs
+
+;; None. The primitive cdr is defined only for non-empty lists.
+
+;; What is (cdr l)
+;; where l is '()
+
+;; None. The primitive cdr is defined only for non-empty lists.
