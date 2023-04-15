@@ -309,3 +309,125 @@
 
 ;; You can't ask if an atom is null?.
 ;; In practice, (null? a) is #f if a is not the empty list.
+
+;;; atom
+;; Is it true or false that s is an atom
+;; where s is 'Harry
+
+;; #t
+
+;; Is (atom? s) true or false
+;; where
+;; s is 'Harry
+
+;; #t
+
+;; Is (atom? s) true or false
+;; where
+;; s is '(Harry had a heap of apples)
+
+;; #f
+
+;; How many arguments does atom? take and
+;; what are they?
+
+;; It takes any argument, the argument can be any S-expr.
+
+;; Is (atom? (car l)) true or false
+;; where
+;; l is '(Harry had a heap of apples)
+
+;; #t, because (car l) is 'Harry
+
+;; Is (atom? (cdr l)) true or false
+;; where
+;; l is '(Harry had a heap of apples)
+
+;; #f
+
+;; Is (atom? (cdr l)) true or false
+;; where
+;; l is '(Harry)
+
+;; #f, because the empty list is not an atom.
+
+;; Is (atom? (car (cdr l))) true or false
+;; where
+;; l is '(swing low sweet cherry oat)
+
+;; #t
+
+;; Is (atom? (car (cdr l))) true or false
+;; where
+;; l is '(swing (low sweet) cherry oat)
+
+;; #f
+
+;;; eq
+;; True or false: a1 and a2 are the same atom
+;; where a1 is 'Harry
+;; and
+;; a2 is 'Harry
+
+;; #t
+
+;; Is (eq? a1 a2) true or false
+;; where a1 is 'Harry
+;; and
+;; a2 is 'Harry
+
+;; #t
+
+;; Is (eq? a1 a2) true or false
+;; where a1 is 'margarine
+;; and
+;; a2 is 'butter
+
+;; #f
+
+;; How many arguments does eq? take and
+;; what are they?
+
+;; Two arguments.
+;; 1) A non-numeric atom
+;; 2) A non-numeric atom
+
+;; Is (eq? l1 l2) true or false
+;; where l1 is '()
+;; and
+;; l2 is '(strawberry)
+
+;; None, because () and (strawberry) are lists.
+;; In practice, eq? supports lists as arguments.
+;; In that case, two lists are equal if they are the same list.
+
+;; Is (eq? n1 n2) true or false
+;; where n1 is 6
+;; and
+;; n2 is 7
+
+;; None, because 6 and 7 are numeric atoms.
+;; In practice, eq? supports some numeric atoms (i.e., numbers).
+
+;; Is (eq? (car l) a) true or false
+;; where
+;; l is '(Mary had a little lamb chop)
+;; and
+;; a is 'Mary
+
+;; #t
+
+;; Is (eq? (cdr l) a) true or false
+;; where
+;; l is '(soured milk)
+;; and
+;; a is 'milk
+
+;; None, eq? doesn't take lists as arguments, and (cdr l) is a list.
+;; In practice, #f.
+
+;; Is (eq? (car l) (car (cdr l))) true or false
+;; where
+;; l is '(beans beans we need jelly beans)
+
+;; #t
