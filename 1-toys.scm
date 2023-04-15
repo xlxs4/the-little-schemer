@@ -184,3 +184,128 @@
 ;; where l is '()
 
 ;; None. The primitive cdr is defined only for non-empty lists.
+
+;; What is (car (cdr l))
+;; where
+;; l is '((b) (xy) ((c)))
+
+;; (xy), because (cdr l) is ((xy) ((c)))
+;; and the car of that is (xy).
+
+;; What is (cdr (cdr l))
+;; where
+;; l is '((b) (xy) ((c)))
+
+;; (((c)))
+
+;; What is (cdr (car l))
+;; where
+;; l is '(a (b (c)) d)
+
+;; None, because (car l) is a, an atom.
+
+;; What does car take as an argument?
+
+;; A non-empty list.
+
+;; What does cdr take as an argument?
+
+;; A non-empty list.
+
+;;; cons
+;; What is the cons of the atom a and the list l
+;; where a is 'peanut
+;; and
+;; l is '(butter and jelly)
+;; This can also be written "(cons a l)".
+;; Read: "cons the atom a onto the list l."
+
+;; (peanut butter and jelly)
+
+;; What is the cons of s and l
+;; where s is '(banana and)
+;; and
+;; l is '(peanut butter and jelly)
+
+;; ((banana and) peanut butter and jelly)
+
+;; What is (cons s l)
+;; where
+;; s is '((help) this)
+;; and
+;; l is '(is very ((hard) to learn))
+
+;; (((help) this) is very ((hard) to learn))
+
+;; What does cons take as its arguments?
+
+;; two arguments:
+;; 1) any S-expr
+;; 2) any list
+
+;; What is (cons s l)
+;; where
+;; s is '(a b (c))
+;; and
+;; l is '()
+
+;; ((a b (c)))
+
+;; What is (cons s l)
+;; where s is 'a
+;; and l is '()
+
+;; (a)
+
+;; What is (cons s l)
+;; where
+;; s is '((a b c))
+;; and l is 'b
+
+;; None, because l is an atom, not a list.
+;; In practice, (cons a b) works for any a and b, and
+;; (car (cons a b)) = a
+;; (cdr (cons a b)) = b
+
+;; What is (cons s l)
+;; where s is 'a
+;; and l is 'b
+
+;; None, because l is an atom, not a list.
+
+;; What is (cons s (car l))
+;; where s is 'a
+;; and
+;; l is '((b) c d)
+
+;; (a b), since (car l) is the list (b).
+
+;; What is (cons s (cdr l))
+;; where s is 'a
+;; and
+;; l is '((b) c d)
+
+;; (a c d)
+
+;;; null
+;; Is it true that the list l is the null list
+;; where l is '()
+
+;; Yes, because l consists of no S-exprs, it is empty.
+
+;; What is (null? (quote ()))
+
+;; True, because (quote ()) is '().
+
+;; Is (null? l) true or false
+;; where
+;; l is (a b c)
+
+;; #f
+
+;; Is (null? a) true or false
+;; where
+;; a is 'spaghetti
+
+;; You can't ask if an atom is null?.
+;; In practice, (null? a) is #f if a is not the empty list.
